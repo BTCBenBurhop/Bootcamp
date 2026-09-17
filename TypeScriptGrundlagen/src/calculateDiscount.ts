@@ -1,4 +1,4 @@
-const price: number = 200;
+const price: number = 3000;
 const isMember: boolean = true;
 
 if (isMember && price > 100) {

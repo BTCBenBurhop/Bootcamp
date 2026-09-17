@@ -12,10 +12,12 @@ for (let i = 0; i < arrPlayer.length; i++) {
 let counter: number = 0;
 
 for (let i = 0; i < arrResult.length; i++) {
-    if (arrResult[i] > counter) {
-        counter = arrResult[i];
+    const value = arrResult[i];
+    if (value && value > counter) {
+        counter = value;
     }
 }
+
 console.log();
 console.log("Die höchste geworfene Zahl ist: " + counter);
 console.log();
