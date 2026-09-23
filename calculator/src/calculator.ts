@@ -25,7 +25,7 @@ function setCalculation() {
     const divOutput = document.getElementById("resulttext");
 
     if (divOutput && result) {
-    divOutput.innerText = "Ergebnis: " + result;
+    divOutput.innerText = result;
     }
     return;
 }

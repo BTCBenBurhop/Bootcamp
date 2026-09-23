@@ -24,7 +24,7 @@ function setCalculation() {
     const result = calculate(Number(input1.value), input2.value, Number(input3.value));
     const divOutput = document.getElementById("resulttext");
     if (divOutput && result) {
-        divOutput.innerText = "Ergebnis: " + result;
+        divOutput.innerText = result;
     }
     return;
 }
