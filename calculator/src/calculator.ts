@@ -1,0 +1,31 @@
+function calculate(input1 :number, input2 :string, input3 :number) :string {
+    if (input2 === "+"){
+        return (input1 + input3).toString();
+    }
+    else if (input2 === "-") {
+        return (input1 - input3).toString();
+    }
+    else if (input2 === "*") {
+        return (input1 * input3).toString();
+    }
+    else if (input2 === "/") {
+        if (input3 === 0) {
+            return "Teilen durch 0 nicht möglich";
+        }
+        return (input1 / input3).toString();
+    }
+    return "Ungültig";
+}
+
+function setCalculation() {
+    const input1 = document.getElementById("input1") as HTMLInputElement;
+    const input2 = document.getElementById("input2") as HTMLSelectElement;
+    const input3 = document.getElementById("input3") as HTMLInputElement;
+    const result :string = calculate(Number(input1.value), input2.value, Number(input3.value));
+    const divOutput = document.getElementById("resulttext");
+
+    if (divOutput && result) {
+    divOutput.innerText = "Ergebnis: " + result;
+    }
+    return;
+}
