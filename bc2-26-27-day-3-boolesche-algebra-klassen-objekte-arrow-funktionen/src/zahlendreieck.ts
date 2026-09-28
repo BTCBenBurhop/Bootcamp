@@ -6,10 +6,3 @@ function berechneReihe(n :number): number [] {
     }
     return arr1;
 }
-
-function berechneFlaeche(n :number): number [][] {
-    const arr: number [] = berechneReihe(n);
-    return arr.map(x => arr.map(y => x * y));
-}
-
-console.log(berechneFlaeche(3));
