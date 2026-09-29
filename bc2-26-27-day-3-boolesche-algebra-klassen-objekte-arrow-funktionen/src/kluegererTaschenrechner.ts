@@ -1,6 +1,53 @@
-const teile: string[] = ["10", "-", "3", "+", "2"]
+function zerlegeEingabe(eingabe: string): string[] {
+    const teile: string[] = [];
+    let zahl: string = "";
 
-berechnePlusUndMinus(teile);
+    for(let i: number = 0; i < eingabe.length; i++) {
+        let zeichen: string = eingabe[i];
+        if (zeichen === "–" || zeichen === "−") {
+            zeichen = "-";
+        }
+        if (zeichen >= "0" && zeichen <= "9"){
+            zahl += zeichen;
+        }
+        else {
+            if (zahl !== "") {
+                teile.push(zahl);
+                zahl = "";
+            }
+            if (zeichen === " "){
+                //Leerzeichen überspringen
+            } else if (zeichen === "+" || zeichen === "-" || zeichen === "*" || zeichen === "/" || zeichen === "^" || zeichen === "(" || zeichen === ")") {
+                teile.push(zeichen);
+            } else {
+                console.log("Ungültiges Zeichen: " + zeichen);
+            }
+        }
+    }
+    if (zahl !== "") {
+        teile.push(zahl);
+    }
+    return teile;
+}
+
+function berechneMitKlammern (teile: string[]): void {
+    let anfang :number = teile.lastIndexOf("(");
+
+    while (anfang !== -1) {
+        const ende :number = teile.indexOf(")", anfang + 1);
+        const innen :string[] = teile.slice(anfang + 1, ende);
+        berechneOhneKlammern(innen);
+        const ergebnis :number = Number(innen[0]);
+        teile.splice(anfang, ende - anfang + 1, String(ergebnis));
+        anfang = teile.lastIndexOf("(");
+    }
+    berechneOhneKlammern(teile);
+}
+
+function berechneOhneKlammern (teile: string[]): void {
+    berechneHochUndMal(teile);
+    berechnePlusUndMinus(teile);
+}
 
 function berechneHochUndMal (teile: string[]): void {
     // Potenzen: von rechts nach links
@@ -12,7 +59,6 @@ function berechneHochUndMal (teile: string[]): void {
 
         teile.splice(i-1, 3, String(ergebnis));
         }
-
     }
 
     // Multiplikation: von links nach rechts
@@ -27,7 +73,7 @@ function berechneHochUndMal (teile: string[]): void {
             }
             else {
                 if (rechts === 0) {
-                    console.log("Division durch 0 ist nicht erlaubt");
+                    console.log("Division durch 0 ist nicht möglich");
                     return;
                 }
                 else {
@@ -65,5 +111,10 @@ function berechnePlusUndMinus(teile: string[]): void {
         }
     }
 }
+
+const eingabe: string = "34*(11+35/6(8-9+11))";
+const teile: string[] = zerlegeEingabe(eingabe);
+
+berechneMitKlammern(teile);
 
 console.log(teile);
