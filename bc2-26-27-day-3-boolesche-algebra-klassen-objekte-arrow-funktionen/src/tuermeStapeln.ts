@@ -16,7 +16,7 @@ function tuermeVonHanoi(hoehe: number, startStab: number = 1, zielStab: number =
     return [...schritt1, schritt2, ...schritt3];
 }
 
-const turmHoehe: number = 20;
+const turmHoehe: number = 10;
 const alleZuege: string[] = tuermeVonHanoi(turmHoehe);
 
 console.log("Lösung für Türme von Hanoi mit Höhe " + turmHoehe + ":");
