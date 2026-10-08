@@ -1,12 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="de">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Ben Burhop</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <meta name="description" content="Landing-Page von Ben Burhop">
 
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -14,8 +14,8 @@
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
@@ -24,9 +24,49 @@
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+  <header>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#">Start</a></li>
+        <li><a href="#profil">Über mich</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="profil" class="profil">
+      <div class="karte">
+        <img class="profilbild" src="img/bild.jpg" alt="Foto von Ben Burhop">
+
+        <h1>Ben Burhop</h1>
+        <h2 class="rolle">Wirtschaftsinformatik mit FISY</h2>
+
+        <ul id="kontakt" class="kontakt">
+          <li>E-Mail: <a href="mailto:ben.burhop@beispiel.de">ben.burhop@beispiel.de</a></li>
+          <li>Telefon: <a href="tel:+491234567890">0123 4567890</a></li>
+          <li>GitHub: <a href="https://github.com/BTCBenBurhop">BTCBenBurhop</a></li>
+          <li>Wohnort: Metjendorf</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <h2>Meine Galerie</h2>
+
+      <div class="galerie">
+        <img src="src=img/bild2.jpg" alt="">
+        <img src="src=img/bild3.jpg" alt="">
+        <img src="src=img/bild4.jpg" alt="">
+        <img src="src=img/bild5.jpg" alt="">
+        <img src="src=img/bild6.jpg" alt="">
+        <img src="src=img/bild7.jpg" alt="">
+      </div>
+    </section>
+
+  </main>
 
 </body>
 
